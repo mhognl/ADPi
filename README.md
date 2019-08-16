@@ -8,3 +8,5 @@ Only wget. Recommended: Raspbian Lite. Install with (Raspbian standard included)
 
 ### Command to install:
 *wget https://tomaaien.nl/adpi/install -O /tmp/install && bash /tmp/install && rm /tmp/install*
+
+## More README coming soon!
