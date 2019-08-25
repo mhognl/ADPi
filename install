@@ -13,6 +13,13 @@ resolvconf -u
 echo "In order to install ADPi, you need a static IP."
 echo "You need to add the following to /etc/resolv.conf.d/resolvconf/head:"
 echo "search yourdomain.local"
+echo "Nameserver example (Google DNS servers):"
+echo "nameserver 8.8.8.8"
+echo "nameserver 8.8.4.4"
+echo "The file 'head' looks now:"
+echo "search yourdomain.local"
+echo "nameserver 8.8.8.8"
+echo "nameserver 8.8.4.4"
 
 PS3='Did you do that? Do you want to continue? '
 options=("Yes" "No")
@@ -33,8 +40,7 @@ do
 			sleep 10
 			echo "We will continue installation!"
 			sleep 2
-			apt install samba smbclient winbind krb5-user krb5-config krb5-locales winbind libpam-winbind libnss-winbind samba-dsdb-modules -y
-			resolvconf -u
+			apt install samba smbclient winbind krb5-user krb5-config krb5-locales winbind libpam-winbind libnss-winbind samba-dsdb-modules samba-vfs-modules -y
 			systemctl stop samba-ad-dc.service smbd.service nmbd.service winbind.service
 			systemctl disable samba-ad-dc.service smbd.service nmbd.service winbind.service
 			echo "Checking SAMBA config now..."
@@ -73,7 +79,7 @@ do
 		;;
 		
 		"No")
-			echo "Reboot please later!"
+			echo "Please reboot later!"
 			sleep 2
 			break 2
 		;;
