@@ -33,7 +33,7 @@ do
 			sleep 10
 			echo "We will continue installation!"
 			sleep 2
-			apt install samba smbclient winbind krb5-user krb5-config krb5-locales winbind libpam-winbind libnss-winbind -y
+			apt install samba smbclient winbind krb5-user krb5-config krb5-locales winbind libpam-winbind libnss-winbind samba-dsdb-modules -y
 			echo "nameserver 8.8.8.8
 nameserver 8.8.4.4" >> /etc/resolvconf/resolv.conf.d/head
 			resolvconf -u
