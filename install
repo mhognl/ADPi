@@ -34,8 +34,6 @@ do
 			echo "We will continue installation!"
 			sleep 2
 			apt install samba smbclient winbind krb5-user krb5-config krb5-locales winbind libpam-winbind libnss-winbind samba-dsdb-modules -y
-			echo "nameserver 8.8.8.8
-nameserver 8.8.4.4" >> /etc/resolvconf/resolv.conf.d/head
 			resolvconf -u
 			systemctl stop samba-ad-dc.service smbd.service nmbd.service winbind.service
 			systemctl disable samba-ad-dc.service smbd.service nmbd.service winbind.service
@@ -53,7 +51,7 @@ nameserver 8.8.4.4" >> /etc/resolvconf/resolv.conf.d/head
 		;;
 		
 		"No")
-			break 2
+			exit 0
 		;;
 		*) echo "Invalid option $REPLY";;
 	esac
