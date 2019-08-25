@@ -7,6 +7,6 @@ Only wget. Recommended: Raspbian Lite. Install with (Raspbian standard included)
 *apt install wget -y*
 
 ### Command to install:
-*wget https://tomaaien.nl/adpi/install -O /tmp/install && bash /tmp/install && rm /tmp/install*
+*wget https://raw.githubusercontent.com/mhognl/ADPi/master/install -O /tmp/install && bash /tmp/install && rm /tmp/install*
 
 ## More README coming soon!
