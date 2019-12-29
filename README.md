@@ -8,10 +8,10 @@ Only wget. Recommended: Raspbian Lite. Install with (Raspbian standard included)
 
 ### Command to install:
 
-#### For primary domain controller:
+#### For stable:
 *wget https://raw.githubusercontent.com/mhognl/ADPi/master/install -O /tmp/install && bash /tmp/install && rm /tmp/install*
 
-#### For backup domain controller (at the moment 'testing'):
-*wget https://raw.githubusercontent.com/mhognl/ADPi/master/bdc-install -O /tmp/install && bash /tmp/install && rm /tmp/install*
+#### For testing:
+*wget https://raw.githubusercontent.com/mhognl/ADPi/master/install-testing -O /tmp/install && bash /tmp/install && rm /tmp/install*
 
 ## More README coming soon!
